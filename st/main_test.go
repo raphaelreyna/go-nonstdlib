@@ -1,4 +1,4 @@
-package gost
+package st
 
 import (
 	"fmt"

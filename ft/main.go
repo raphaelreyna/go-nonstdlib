@@ -1,4 +1,4 @@
-package goft
+package ft
 
 import (
 	"log"
