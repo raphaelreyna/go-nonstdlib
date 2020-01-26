@@ -1,3 +1,5 @@
 github.com/raphaelreyna/go-nonstdlib v0.0.0-20200126031504-83fe6c9a159b h1:SRIqKk6n+iFgaNVZUJTEvHwiSlk59118ljLrcEPBERk=
 github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126034332-1f0e0bea0c37 h1:+mVmuijo/OaIu2YwUkA7oxuOtm0FmeIwp6sW2KDJsQI=
 github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126034332-1f0e0bea0c37/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126052100-6d98f4bb54e9 h1:CyvTKHNSTUaDQG3zyt64wGCwFrto96ccWqR7UcRU4jE=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126052100-6d98f4bb54e9/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=

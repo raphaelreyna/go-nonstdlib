@@ -1,5 +1,9 @@
 github.com/raphaelreyna/go-nonstdlib v0.0.0-20200126044102-b83da255861f h1:eKp2N5fC4Vx5R9JgBNRBumIELcDEJiVem+e4IK0FsQc=
 github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126034332-1f0e0bea0c37 h1:+mVmuijo/OaIu2YwUkA7oxuOtm0FmeIwp6sW2KDJsQI=
 github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126034332-1f0e0bea0c37/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126052100-6d98f4bb54e9 h1:CyvTKHNSTUaDQG3zyt64wGCwFrto96ccWqR7UcRU4jE=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126052100-6d98f4bb54e9/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
 github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126045426-e595016627b6 h1:2VNU+aF4x4r14pZO55TH0zbItNmrvE3ImdNeFmEHjaw=
 github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126045426-e595016627b6/go.mod h1:Q91SHWBurAEe31DTzIhI1lIFNurghPjb+Xha3/6CQuA=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126052100-6d98f4bb54e9 h1:nrdcnMsosMhUmLw8344nAEzRDolmVU0LkhD4zKvvQjo=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126052100-6d98f4bb54e9/go.mod h1:Q91SHWBurAEe31DTzIhI1lIFNurghPjb+Xha3/6CQuA=
