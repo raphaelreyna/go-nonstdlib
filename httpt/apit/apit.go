@@ -7,8 +7,11 @@ import (
 	"path"
 )
 
-func (s *APIClient) Register(name, host, endpoint, method string, retries uint) {
-	u, _ := url.Parse(s.hosts[host].String())
+func (s *APIClient) Register(name, host, endpoint, method string, retries uint) error {
+	u, err := url.Parse(s.hosts[host].String())
+	if err != nil {
+		return err
+	}
 	u.Path = path.Join(u.Path, endpoint)
 	s.Services[name] = &httpt.Request{
 		Method:  method,
@@ -16,6 +19,7 @@ func (s *APIClient) Register(name, host, endpoint, method string, retries uint) 
 		Retries: retries,
 		Client:  s.Client,
 	}
+	return nil
 }
 
 type APIClient struct {
