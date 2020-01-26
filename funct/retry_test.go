@@ -8,7 +8,7 @@ import (
 
 func TestRetry(t *testing.T) {
 	timeStamps := []time.Time{}
-	var testFunc FailableNullaryFunc = func() error {
+	var testFunc = func() error {
 		timeStamps = append(timeStamps, time.Now())
 		return errors.New("fail")
 	}
@@ -16,7 +16,7 @@ func TestRetry(t *testing.T) {
 		Retries:              7,
 		ConcurrentErrHandler: false,
 	}
-	err := testFunc.Retry(conf)
+	err := Retry(conf, testFunc)
 	if err == nil {
 		t.Fatalf("found nil, expected error")
 	}

@@ -10,6 +10,7 @@ import (
 	"net/url"
 )
 
+// Request holds parameters that are common between subsequent http requests to the same endpoint.
 type Request struct {
 	Method  string
 	URL     *url.URL
@@ -17,7 +18,8 @@ type Request struct {
 	Client  *http.Client
 }
 
-func (r *Request) With(h http.Header, v url.Values, payload interface{}, ctx context.Context) (*http.Response, error) {
+// With has the requests client make the request with the given parameters.
+func (r *Request) With(ctx context.Context, h http.Header, v url.Values, payload interface{}) (*http.Response, error) {
 	var (
 		body     io.Reader
 		response *http.Response
@@ -44,13 +46,14 @@ func (r *Request) With(h http.Header, v url.Values, payload interface{}, ctx con
 	if ctx != nil {
 		req = req.WithContext(ctx)
 	}
-	var reqFunc funct.FailableNullaryFunc = func() error {
+	var reqFunc = func() error {
 		response, err = r.Client.Do(req)
 		return err
 	}
-	err = reqFunc.Retry(&funct.RetryConf{
+	conf := &funct.RetryConf{
 		Retries:              r.Retries,
 		ConcurrentErrHandler: true,
-	})
+	}
+	err = funct.Retry(conf, reqFunc)
 	return response, err
 }
