@@ -45,11 +45,6 @@ func (r *Request) With(h http.Header, v url.Values, payload interface{}, ctx con
 		req = req.WithContext(ctx)
 	}
 	var reqFunc funct.FailableNullaryFunc = func() error {
-		if ctx != nil {
-			if err := ctx.Err(); err != nil {
-				return err
-			}
-		}
 		response, err = r.Client.Do(req)
 		return err
 	}
