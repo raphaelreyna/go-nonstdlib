@@ -7,7 +7,7 @@ import (
 )
 
 // UpdateStruct updates the field values of struct 's' with values given 'u' for the tag given by string 'tag'.
-// The key for 'm' should match the values for 'tag' for each field.
+// The key for 'u' should match the values for 'tag' for each field.
 // Supports targeting child tags such as the child tag 'fizz' in the tag `foo:"bar:baz;fizz:buzz"` with the notation: "foo:fizz".
 func UpdateStructByTag(s interface{}, u map[string]interface{}, tag string) error {
 	v, err := extractStructValue(s)
