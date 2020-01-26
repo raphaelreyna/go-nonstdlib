@@ -28,8 +28,8 @@ type APIClient struct {
 	hosts    map[string]*url.URL
 }
 
-func NewAPIClient(c *http.Client, hosts map[string]*url.URL) *APIClient {
-	return &APIClient{
+func NewAPIClient(c *http.Client, hosts map[string]*url.URL) {
+	_ = &APIClient{
 		Client:   c,
 		hosts:    hosts,
 		Services: map[string]*httpt.Request{},
