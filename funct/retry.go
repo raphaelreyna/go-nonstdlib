@@ -14,7 +14,7 @@ var DefaultBackoffSequence FloatSequence = func(a uint) float32 {
 	if a < 4 {
 		return 1.0
 	}
-	return 1.5*float32(a) - 4.0
+	return 1.5*float32(a) - 3.5
 }
 
 // DefaultErrorHandler logs the error
@@ -51,12 +51,12 @@ func (f FailableNullaryFunc) Retry(conf *RetryConf) error {
 	// Loop until success or attempts run out
 	for err != nil {
 		// Make sure we can still make an attempt
-		if attempt >= conf.Retries {
+		if attempt >= retries {
 			// If out of attempts, return last attempts error
 			return err
 		}
 		// Wait based on func w
-		waitTime := time.Duration(wm(retries)) * time.Second
+		waitTime := time.Duration(wm(attempt) * 1000000000)
 		time.Sleep(waitTime)
 		// Call function
 		err = f.Call(errHandler, true)
@@ -66,7 +66,7 @@ func (f FailableNullaryFunc) Retry(conf *RetryConf) error {
 	return nil
 }
 
-// Calls the function `f()` and passes the error, if there is one, to `errorHandler()`; also returns the error.
+// Call calls the function `f()` and passes the error, if there is one, to `errorHandler()`; also returns the error.
 // The `errorHandler` function may be called as a go routine if `concurrent` is true.
 func (f FailableNullaryFunc) Call(errorHandler ErrorHandler, concurrent bool) error {
 	if err := f(); err != nil {
