@@ -1,0 +1,4 @@
+package nonstdlb
+
+func main() {
+}
