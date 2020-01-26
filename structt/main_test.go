@@ -1,4 +1,4 @@
-package st
+package structt
 
 import (
 	"fmt"
