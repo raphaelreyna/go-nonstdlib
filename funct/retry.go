@@ -5,8 +5,11 @@ import (
 	"time"
 )
 
+// FailableNullaryFunc represents a function with no parameters that returns only an error
 type FailableNullaryFunc func() error
+// FloatSequence is a function that represents a sequence of real numbers over the integers
 type FloatSequence func(uint) float32
+// ErrorHandler is a function that handles errors.
 type ErrorHandler func(error)
 
 // DefaultBackoffSequence waits 1 second for first 4 seconds, and then increases wait time by 1.5 seconds per attempt
@@ -22,6 +25,7 @@ var DefaultErrorHandler ErrorHandler = func(err error) {
 	log.Println(err)
 }
 
+// RetryConf holds the configuration for a function call retry
 type RetryConf struct {
 	Retries uint
 	// WaitMap should map the current attempt number to number of seconds to wait before next attempt.
