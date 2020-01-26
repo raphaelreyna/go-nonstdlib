@@ -34,7 +34,7 @@ func (r *Request) With(ctx context.Context, h http.Header, v url.Values, payload
 	}
 	url := r.URL.String()
 	if v != nil {
-		url = url + v.Encode()
+		url = url + "?" + v.Encode()
 	}
 	req, err := http.NewRequest(r.Method, url, body)
 	if err != nil {
