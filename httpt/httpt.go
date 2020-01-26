@@ -51,6 +51,9 @@ func (r *Request) With(h http.Header, v url.Values, payload interface{}, ctx con
 		response, err = r.Client.Do(req)
 		return err
 	}
-	err = reqFunc.Retry(r.Retries, funct.DefaultBackoffSequence, funct.DefaultErrorHandler)
+	err = reqFunc.Retry(&funct.RetryConf{
+		Retries:              r.Retries,
+		ConcurrentErrHandler: true,
+	})
 	return response, err
 }
