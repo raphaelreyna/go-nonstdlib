@@ -26,7 +26,8 @@ type APIClient struct {
 
 func NewAPIClient(c *http.Client, hosts map[string]*url.URL) *APIClient {
 	return &APIClient{
-		Client: c,
-		hosts:  hosts,
+		Client:   c,
+		hosts:    hosts,
+		Services: map[string]*httpt.Request{},
 	}
 }
