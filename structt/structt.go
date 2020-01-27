@@ -6,11 +6,11 @@ import (
 	"strings"
 )
 
-// UpdateStruct updates the field values of struct 's' with values given 'u' for the tag given by string 'tag'.
+// UpdateStructByTag updates the field values of struct 's' with values given 'u' for the tag given by string 'tag'.
 // The key for 'u' should match the values for 'tag' for each field.
 // Supports targeting child tags such as the child tag 'fizz' in the tag `foo:"bar:baz;fizz:buzz"` with the notation: "foo:fizz".
 func UpdateStructByTag(s interface{}, u map[string]interface{}, tag string) error {
-	v, err := extractStructValue(s)
+	v, err := ExtractStructValue(s)
 	if err != nil {
 		return err
 	}
@@ -41,7 +41,7 @@ func UpdateStructByTag(s interface{}, u map[string]interface{}, tag string) erro
 
 // ExtractStructValue returns the reflect.Value for the underlying struct of the pointer i.
 // If i is not a pointer to a struct then error will be non-nil and returned value should be ignored.
-func extractStructValue(i interface{}) (reflect.Value, error) {
+func ExtractStructValue(i interface{}) (reflect.Value, error) {
 	v := reflect.ValueOf(i)
 	err := errors.New("wrong kind")
 	if v.Kind() != reflect.Ptr {
