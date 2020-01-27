@@ -42,13 +42,13 @@ func Retry(conf *RetryConf, f func() error) error {
 		wm = DefaultBackoffSequence
 	}
 	concerr := conf.ConcurrentErrHandler
-	// Initiliaze attemp counter and error
+	// Initiliaze attempt counter and error
 	err := call(concerr, errHandler, f)
 	var attempt uint = 2
 	// Loop until success or attempts run out
 	for err != nil {
 		// Make sure we can still make an attempt
-		if attempt >= retries {
+		if attempt > retries {
 			// If out of attempts, return last attempts error
 			return err
 		}

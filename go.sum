@@ -1,2 +1,17 @@
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126034332-1f0e0bea0c37/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126052100-6d98f4bb54e9/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
 github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126081120-bfd0ff499406 h1:8ykhX63Zx7wjoLEmMssNTpgVAPiolZPnD7RDStLNodk=
 github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126081120-bfd0ff499406/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126205152-e04426577d05 h1:+wg+6zkDXGZ7eo0WDHYPC7S038TWqZSRcgOwYNWktdI=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126205152-e04426577d05/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126232955-c65f45cff089 h1:ch/no1/nMEc7ibBDp5sguHzEb4SRhl2yqL3JBrOczjk=
+github.com/raphaelreyna/go-nonstdlib/funct v0.0.0-20200126232955-c65f45cff089/go.mod h1:Yk5Fj0fpmuUl7GJbvUNTnfzwz2IWbYyBCecNjocKVFA=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126052100-6d98f4bb54e9 h1:nrdcnMsosMhUmLw8344nAEzRDolmVU0LkhD4zKvvQjo=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126052100-6d98f4bb54e9/go.mod h1:Q91SHWBurAEe31DTzIhI1lIFNurghPjb+Xha3/6CQuA=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126222954-facf90068852 h1:5CAFTWUwKpB24VjRnwztQI+/LfzZaz7IfA6fl+iEfaU=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126222954-facf90068852/go.mod h1:Yt0f6BCVniQBTy2B+6KKI6igHRBev9xWISZOQ+rh0Y0=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126232955-c65f45cff089 h1:+JQnBKjMbqYcaD8txleMZDdX6zLOmqEn8dNlorTagOA=
+github.com/raphaelreyna/go-nonstdlib/httpt v0.0.0-20200126232955-c65f45cff089/go.mod h1:7+ywWcvrn/Dmge/W9TQ+VjjUDlYmkf6ZCOCUE8l/N3k=
+github.com/raphaelreyna/go-nonstdlib/httpt/apit v0.0.0-20200126222954-facf90068852/go.mod h1:CrPhrA+UCsfUKBVIL+knQbB5Py3gWIUYNryXcvgavNw=
+github.com/raphaelreyna/go-nonstdlib/httpt/apit v0.0.0-20200126232955-c65f45cff089 h1:PcCWFnEvYTZVcBCReF99dzYTFx2VhX6uSAQkizqjFfY=
+github.com/raphaelreyna/go-nonstdlib/httpt/apit v0.0.0-20200126232955-c65f45cff089/go.mod h1:CrPhrA+UCsfUKBVIL+knQbB5Py3gWIUYNryXcvgavNw=
