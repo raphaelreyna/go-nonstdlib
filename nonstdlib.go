@@ -1,4 +1,0 @@
-package nonstdlb
-
-func main() {
-}
