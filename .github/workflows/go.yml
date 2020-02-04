@@ -19,3 +19,6 @@ jobs:
 
     - name: Run test suite
       run: go test -v -cover ./...
+    
+    - name: Update report card
+      uses: creekorful/goreportcard-action@v0.4
