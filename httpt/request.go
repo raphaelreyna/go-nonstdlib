@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"github.com/raphaelreyna/go-nonstdlib/funct"
 	"io"
 	"net/http"
@@ -26,11 +27,23 @@ func (r *Request) With(ctx context.Context, h http.Header, v url.Values, payload
 		err      error
 	)
 	if payload != nil {
-		payloadBytes, err := json.Marshal(payload)
-		if err != nil {
-			return nil, err
+		mimeType := h.Get("Content-Type")
+		switch mimeType {
+		case "":
+			fallthrough
+		case "application/json":
+			payloadBytes, err := json.Marshal(payload)
+			if err != nil {
+				return nil, err
+			}
+			body = bytes.NewBuffer(payloadBytes)
+		default:
+			payloadBytes, ok := payload.([]byte)
+			if !ok {
+				return nil, errors.New("payload should be JSON encodable; if non-empty 'Content-Type' header (other than 'application/json') then payload should be of type []byte")
+			}
+			body = bytes.NewBuffer(payloadBytes)
 		}
-		body = bytes.NewBuffer(payloadBytes)
 	}
 	url := r.URL.String()
 	if v != nil {
