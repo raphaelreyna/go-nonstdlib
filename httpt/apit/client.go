@@ -10,7 +10,8 @@ import (
 
 // Register adds a new service thats provided by one of the APIClients hosts.
 func (s *APIClient) Register(name, host, endpoint, method string, retries uint) error {
-	if hostURL, ok := s.hosts[host]; !ok {
+	hostURL, ok := s.hosts[host]
+	if !ok {
 		return errors.New("could not find host URL: " + host)
 	}
 	if hostURL == nil {
