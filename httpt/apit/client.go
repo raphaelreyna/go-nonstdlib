@@ -5,11 +5,18 @@ import (
 	"net/http"
 	"net/url"
 	"path"
+	"errors"
 )
 
 // Register adds a new service thats provided by one of the APIClients hosts.
 func (s *APIClient) Register(name, host, endpoint, method string, retries uint) error {
-	u, err := url.Parse(s.hosts[host].String())
+	if hostURL, ok := s.hosts[host]; !ok {
+		return errors.New("could not find host URL: " + host)
+	}
+	if hostURL == nil {
+		return errors.New("found nil host URL: " + host)
+	}
+	u, err := url.Parse(hostURL.String())
 	if err != nil {
 		return err
 	}
